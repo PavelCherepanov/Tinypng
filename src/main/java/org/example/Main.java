@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.List;
 
 public class Main {
-    private static final Tinify tinify = new Tinify("PTVQ7sNbY3R6lT40cgBjPqVk6DLPtFRl");
+    private static final Tinify tinify = new Tinify("");
     private static final FileFinder fileFinder = new FileFinder();
 
     private static void walkingByDirs(String dir) throws Exception {
