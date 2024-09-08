@@ -25,6 +25,19 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        walkingByDirs(args[0]);
+//        walkingByDirs(args[0]);
+        List<File> files = fileFinder.findFile(new File(args[0]));
+
+        File currentFolder = new File(args[0], "tiny");
+        currentFolder.mkdir();
+        for (int i = 0; i < files.size(); i++) {
+            if (files.get(i).isFile()) {
+                String uploadedLink = tinify.uploadFile(files.get(i));
+                tinify.downloadFile(uploadedLink, files.get(i).getParent() + "\\tiny\\" + files.get(i).getName());
+            }
+
+        }
+
+
     }
 }
